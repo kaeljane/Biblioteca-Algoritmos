@@ -1,0 +1,4 @@
+Para formar um triangulo:
+    x + y > z
+
+    sendo eles os lados do triangulo
