@@ -1,0 +1,12 @@
+D = d*q + R
+
+D/d
+
+D -> valor a ser dividido
+q -> numero de pacotes que foi possivel dividir
+R -> resto
+
+para saber a quantidade necessária para formar um proximo pacotes
+    seja a/b
+
+    b - (a % b) -> é a quantidade necessária para formar um novo pacote.
