@@ -1,0 +1,2 @@
+remover um elemento de um vetor através do indice
+    v.erase(v.begin + i);
