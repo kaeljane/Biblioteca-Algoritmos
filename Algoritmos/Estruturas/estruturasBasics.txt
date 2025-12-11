@@ -1,0 +1,13 @@
+
+auto meuPar = make_pair(10, "C++");
+
+    - O compilador deduz que é <int, char const*> ou string
+
+    - você nao precisa especificar o tipo do conteudo facilita da digitação!!
+
+
+tuple<int, int, int> t{3, 4, 5};
+
+cout << get<0>(t) << " " << get<1>(t) << " " << get<2>(t) << endl;
+
+shuffle()
