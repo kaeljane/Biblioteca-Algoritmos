@@ -4,11 +4,14 @@
 // Auxiliary Space: O(log min(a,b))
 
 /*
-if b=0   -> n
-if b!=0  -> gcd (b, a mod b) 
+    if b=0   -> n
+    if b!=0  -> gcd (b, a mod b) 
 
-multiplos numeros
-gcd(a1, a2, a3, a4) = gcd(a1, gcd(a2, gcd(a3, a4)))
+    multiplos numeros
+    gcd(a1, a2, a3, a4) = gcd(a1, gcd(a2, gcd(a3, a4)))
+
+if GCD (A, B) = G -> A%G = 0 e B%G = 0
+
 
 
 */

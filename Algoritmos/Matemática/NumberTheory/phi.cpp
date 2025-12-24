@@ -1,6 +1,12 @@
 // Euler's totient function
 //
 // Time Complexity: O(sqrt(n))
+
+/*
+Numero mágica que é primo entre si com qualquer número? -> [1]
+
+*/
+
 int phi(int n){
     int result = n;
     for(int i = 2; i * i <= n; i++){
