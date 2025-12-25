@@ -7,5 +7,12 @@ complexidade * tamanho_do_input = operacoes_totais
 
 se operacoes_totais = 10^8 PASSA KRL
 
-
-
+Big-O Function / Maximum n
+O(n!)            - 10
+O(n^3)           - 4 * 10^2
+O(n^2)           - 5 * 10^3
+O(n * raiz(n))   - 10^5
+O(n log(n))      - 10^6
+O(n)             - 10^7
+O(raiz(n))       - 10^12
+O(log(n)) , O(1) - 10^18 
