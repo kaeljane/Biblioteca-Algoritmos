@@ -5,7 +5,7 @@ auto it = lower_bound(all(v), x);
 
 // ---------------------------------------
 
-vi v = {10, 20, 30, 40, 50}; 
+vl v = {10, 20, 30, 40, 50}; 
 // sort(all(v)); // Se não tivesse ordenado, teria que ordenar aqui
 
 int procurado = 35; // Note que 35 não existe no vetor
