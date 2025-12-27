@@ -1,0 +1,19 @@
+[Termo Geral]
+
+    An = A1 + (n-1)*r (valor em uma posicao)
+
+    exemplo:
+        [3, 8, 13, 18]
+
+        A18 = 3 + (18-1)*5
+        A18 = 3 + 17*5
+        A18 = 88
+
+    ll n = (An - A1)/r + 1; (achar posicao)
+
+[Qtd_antes]
+
+    QT_antes = (k - 1)*k / 2
+
+    A1 = 2*(Qtd_antes + 1) - 1
+
