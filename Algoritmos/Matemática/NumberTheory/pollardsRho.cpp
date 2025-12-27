@@ -75,6 +75,7 @@ void factorize(ll n) {
 // ---------------- FIM POLLARD'S RHO ----------------
 
 void solve() {
+    srand(time(0));
     cin >> n;
     factors.clear(); // Importante limpar em casos de teste multiplos
     factorize(n);    

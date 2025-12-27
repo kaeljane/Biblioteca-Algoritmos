@@ -1,4 +1,6 @@
 // Definições para multiplicação segura de 128 bits (evita overflow em a*b % m)
+
+// esse u128 nao funciona no meu gcc atual tem que fazer alteracao
 using u128 = __int128;
 
 ll binPow(ll base, ll e, ll mod) {
