@@ -1,3 +1,4 @@
+O(raiz(n))
 vector<long long> get_divisors(long long n) {
     vector<long long> divs;
     
