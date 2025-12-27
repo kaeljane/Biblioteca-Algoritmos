@@ -1,4 +1,18 @@
+/*
 O(raiz(n))
+Lembre-se dessa formula matemática:
+
+N = A^x * B^y * C^z
+
+(onde A, B, C são primos)
+
+(x+1)*(y+1)*(z+1) = quantidade de divisores de um numero
+
+Use o miller-rabin e pollard rho para fazer isso muito rapido :)
+
+
+*/ 
+
 vector<long long> get_divisors(long long n) {
     vector<long long> divs;
     
