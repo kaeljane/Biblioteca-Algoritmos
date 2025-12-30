@@ -17,6 +17,8 @@ Dica 2: O caso das Ilhas Isoladas (A e D)
     Regra 2: Se não há pontes (B = 0 e C = 0), você nao pode ter loops nas duas ilhas ao mesmo tempo.
     Se (B == 0 e C == 0), então é PROIBIDO que (A > 0 e D > 0);
 
+
+    Se o problema fala de "transições", "estados" ou "pares adjacentes", 90% de ser de grafo.
 */
 
 void solve() {
