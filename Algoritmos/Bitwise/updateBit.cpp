@@ -17,6 +17,7 @@ Passo a passo de como atualizar o bit de um número em uma posição específica
 1. Limpar o bit na posição desejada. Isso é feito com number & ~(1 << position).
 2. Definir o bit para o valor desejado (0 ou 1). Isso é feito com number | (bitValue << position).
 3. O resultado é o número original com o bit na posição desejada atualizado para o valor especificado.
+
 Exemplos de input e output:
 Input:
 number: 13 (1101 em binário)
