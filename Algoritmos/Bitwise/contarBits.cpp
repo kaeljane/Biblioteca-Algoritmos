@@ -10,10 +10,22 @@ int contarBits(int number) {
     return count;
 }
 
+int contarBitsHackerRank(int number) {
+    int count = 0;
+    while (number) {
+        number &= (number - 1); // Remove o último bit definido como 1
+        count++;
+    }
+    return count;
+}
+
 int main() {
     int number;
     cin >> number;
     cout << "Número de bits definidos como 1 em " << number << " é: " << contarBits(number) << endl;
+
+    cout << "Número de bits definidos como 1 em " << number << " (método HackerRank) é: " << contarBitsHackerRank(number) << endl;
+    
     return 0;
 }
 
