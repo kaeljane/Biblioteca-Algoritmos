@@ -19,6 +19,10 @@ int contarBitsHackerRank(int number) {
     return count;
 }
 
+int minJumpsBuiltIn(int n) {
+    return __builtin_popcount(n);
+}
+
 int main() {
     int number;
     cin >> number;
