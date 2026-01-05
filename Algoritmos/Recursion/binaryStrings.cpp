@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// Backtracking ou Força Bruta Inteligente
 // Função auxiliar recursiva
 void generate(int n, string current, vector<string>& result) {
     if (current.size() == n) {
