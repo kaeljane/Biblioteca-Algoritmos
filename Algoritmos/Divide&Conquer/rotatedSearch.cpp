@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int rotated_search(vector<int> a, int key) {
+int rotated_search(vector<int>& a, int key) {
     int n = a.size();
 
     // logic
