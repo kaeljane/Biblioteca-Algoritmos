@@ -8,7 +8,7 @@ Subtração Modular
     (A-B) % M = ((A%M - B%M) + M ) % M
 
 Multiplicação Modular
-    (A*B) % M = ((A&M) * (B%M)) % M 
+    (A*B) % M = ((A%M) * (B%M)) % M 
 
     útil para utilizar em calculos de fatoriais
             ll ans = 1;
@@ -18,4 +18,8 @@ Multiplicação Modular
             }
             cout << ans << el;
 
+Divisão Modular
+    ll divide(ll a, ll b) {
+        return a * binPow(b, MOD-2) % MOD;
+    }
 */
