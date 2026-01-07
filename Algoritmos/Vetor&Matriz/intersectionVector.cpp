@@ -15,4 +15,4 @@ void solve() {
     // Resultado: 2 5 9
     for(int x : interseccao) cout << x << " ";
     cout << el;
-}5
+}
