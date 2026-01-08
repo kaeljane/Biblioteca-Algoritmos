@@ -25,3 +25,8 @@ if (it != v.end()) {
 else {
     cout << "Todos os numeros do vetor sao menores que " << procurado << el;
 }
+
+/*
+upper_bound -> ele encontra o primeiro elemento estritamente maior (>) que k.
+
+*/
