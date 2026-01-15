@@ -19,9 +19,11 @@ int contarBitsHackerRank(int number) {
     return count;
 }
 
-int minJumpsBuiltIn(int n) {
-    return __builtin_popcount(n);
-}
+// Para int
+int bits = __builtin_popcount(13); 
+
+// Para long long (HackerRank usa muito)
+ll bits = __builtin_popcountll(number);
 
 int main() {
     int number;
