@@ -4,6 +4,7 @@
 // Time Complexity = O(log b)
 
 ll binpow(ll a, ll b, ll m){
+    a %= m;
     ll result = 1;
     while(b > 0){
         if(b & 1) result = result * a % m;
@@ -11,6 +12,7 @@ ll binpow(ll a, ll b, ll m){
         b >>= 1;
     }
     return result;
+
 }
 
 // a^b^c -> Pequeno teorema de Fermat | M = 1e9 + 7
