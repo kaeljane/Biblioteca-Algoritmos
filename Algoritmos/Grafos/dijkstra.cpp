@@ -32,4 +32,4 @@ int dijkstra(int n, int s) {
     }
 
     return dist[n-1];
-}
+} 
