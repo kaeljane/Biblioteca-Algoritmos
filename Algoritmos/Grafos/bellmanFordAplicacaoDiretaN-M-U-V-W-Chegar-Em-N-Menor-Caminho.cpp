@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #define ll long long
+#define el '\n'
 using namespace std;
 ll n, t, k, x, y, z, u, m;
 string s, a, b, c;
