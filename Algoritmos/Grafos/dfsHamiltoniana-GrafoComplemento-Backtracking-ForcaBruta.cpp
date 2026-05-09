@@ -49,7 +49,7 @@ bool dfs_hamiltoniano(ll atual, ll visitados, ll origem) {
 
     return false; // Retorna falso para avisar o nó anterior que esse caminho deu ruim
 }
-
+ 
 void solve() {
     if (!(cin >> n >> m)) return;
 
