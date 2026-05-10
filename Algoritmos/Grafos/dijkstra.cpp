@@ -1,36 +1,103 @@
-// Dijkstra
-//
-// Encontra o menor caminho do vértice de index s até os outros vértices
-//
-// O(n log(n))
+// =========================================================================================
+// TÍTULO: DIJKSTRA (MENOR CAMINHO DE ÚNICA ORIGEM)
+// PALAVRAS-CHAVE: Dijkstra, SSSP, Menor Caminho, Grafos com pesos positivos, Min-Heap.
+// =========================================================================================
 
-const int INF = 0x3f3f3f3f;
-vector<vector<pair<ll, ll>>> adj; // {to, weight} É o seu mapa. Ele diz: "A partir da cidade X, eu posso ir para a cidade Y, e essa rua tem peso Z".
+/*
+   CASO DE USO CLÁSSICO:
+   - Encontrar a menor distância de UM nó de origem para TODOS os outros nós.
+   - O grafo DEVE ter pesos maiores ou iguais a zero (Não funciona com pesos negativos).
+   - Extremamente rápido. Complexidade: O(E * log V).
+*/
 
-int dijkstra(ll n, ll s) {
-    vector<int> dist(n, INF); // ele anota a menor distancia descoberta até agora para chegar em cada cidade
+#include <bits/stdc++.h>
+#define ll long long
+#define ii pair<ll, ll> // Usando ll para os dois lados garante zero overflow
+#define pb push_back
+#define el '\n'
+#define f(i,b,e) for (ll i = (b); i < (e); i++)
+#define ___ ios::sync_with_stdio(false); cin.tie(nullptr);
+using namespace std;
 
-    // origem
-    dist[s] = 0; // a distancia da sua cidade de origem (s) para ela mesmo é igual a zero.
+const ll INF = 1e18 + 7;
 
-    using pi = pair<ll,ll>;
-    priority_queue<pi, vector<pi>, greater<pi>> q; // garante que o elemento com o menor peso (distancia) sempre pule para a frente da fila.
-    q.emplace(0,s); // vc entra na fila. Seu peso acumulado é 0, e você está na cidade s.
-    
-    while (!q.empty()) { // enquanto houver "cidades" para explorar
-        auto [w,u] = q.top(); // você pega o primeiro da fila (w: dist acumulada até agora, u: cidade atual)
-        q.pop();
+// Estruturas dinâmicas para evitar lixo de memória entre casos de teste
+vector<vector<ii>> adj;
+vector<ll> dist;
 
-        if (u == n-1) break; // se ja chegamos no destino final podemos parar
-        if (w != dist[u]) continue; // otimizacao: as vezes a mesma cidade entra na fila varias vezes com distancias diferentes
+void dijkstra(ll origem, ll n) {
+    // Passo 1: Inicializa todas as distâncias como Infinito
+    dist.assign(n + 1, INF);
+    dist[origem] = 0;
 
-        for (auto [W,v] : adj[u]) { // coracao do Dijkstra
-            if (w+W < dist[v]) {
-                dist[v] = w+W;
-                q.emplace(w+W,v);
+    // Passo 2: Cria a Fila de Prioridade (Min-Heap)
+    // A declaração fica super limpa usando a nossa macro 'ii'
+    priority_queue<ii, vector<ii>, greater<ii>> pq;
+
+    // Começamos pela origem com distância 0
+    pq.push({0, origem});
+
+    // Passo 3: Roda enquanto a fila não esvaziar
+    while (!pq.empty()) {
+        ll d = pq.top().first; // A distância acumulada para chegar nesse nó
+        ll u = pq.top().second; // O nó atual
+        pq.pop();
+
+        // Otimização crucial: Ignorar distâncias antigas/piores que ficaram presas na fila
+        if (d > dist[u]) continue;
+
+        // Passo 4: Relaxamento dos vizinhos
+        for (auto aresta : adj[u]) {
+            ll v = aresta.first;
+            ll peso = aresta.second;
+
+            // Se o caminho passando por 'u' for mais curto, achamos um atalho!
+            if (dist[u] + peso < dist[v]) {
+                dist[v] = dist[u] + peso; 
+                pq.push({dist[v], v}); // Joga na fila com o novo recorde
             }
         }
     }
+}
 
-    return dist[n-1];
-} 
+void solve() {
+    ll n, m; 
+    if (!(cin >> n >> m)) return;
+
+    // Prepara a lista de adjacência limpa para o caso atual
+    adj.assign(n + 1, vector<ii>());
+
+    // Lendo o grafo com pesos
+    f (i, 0, m) {
+        ll u, v, peso;
+        cin >> u >> v >> peso;
+        
+        // Se for um grafo bidirecional, adiciona ida e volta
+        adj[u].pb({v, peso});
+        adj[v].pb({u, peso});
+    }
+
+    // Roda o algoritmo a partir da origem desejada (ex: nó 1)
+    dijkstra(1, n);
+
+    // =========================================================================
+    // Agora o vetor dist[i] guarda o menor caminho da origem até o nó 'i'
+    // =========================================================================
+
+    cout << "Menor custo a partir do no 1:" << el;
+    f (i, 1, n + 1) {
+        if (dist[i] == INF) {
+            cout << "No " << i << ": Inalcancavel" << el;
+        } else {
+            cout << "No " << i << ": " << dist[i] << el;
+        }
+    }
+}
+
+signed main() {
+    ___
+    // ll t; cin >> t;
+    // while (t--) 
+    solve();
+    return 0;
+}
